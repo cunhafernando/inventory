@@ -1,0 +1,61 @@
+<div class="row g-3" >
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row g-3" >
+  <div class="col-md-4">
+    <strong><%= form.label "Usuário", class: "form-label" %>:</strong>
+    <%= form.text_field :user_name, class: "form-control" %>
+  </div>
+
+  <div class="col-md-4">
+    <strong><%= form.label "Nome", class: "form-label" %>:</strong>
+    <%= form.text_field :first_name, class: "form-control" %>
+  </div>
+
+  <div class="col-md-4">
+    <strong><%= form.label "Sobrenome", class: "form-label" %>:</strong>
+    <%= form.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div class="col-md-4">
+    <strong><%= form.label "Matrícula", class: "form-label" %>:</strong>
+    <%= form.text_field :enrollment, class: "form-control" %>
+  </div>
+
+  <div class="col-md-4">
+    <strong><%= form.label "Departamento", class: "form-label" %>:</strong>
+    <%= form.text_field :department, class: "form-control" %>
+  </div>
+
+  <div class="col-md-4">
+    <strong><%= form.label "Cargo", class: "form-label" %>:</strong>
+    <%= form.text_field :office, class: "form-control" %>
+  </div>
+
+  <div class="col-md-4">
+    <strong><%= form.label "Moderação", class: "form-label" %>:</strong>
+    <%= form.select :role, options_for_select([  ["Selecione um", ""],  "user", "moderator", "admin"]), 
+  {}, { class: "form-select" } %>
+  </div>
+
+  <div class="col-md-4">
+    <strong><%= form.label "Senha", class: "form-label" %>:</strong>
+    <%= form.text_field :password, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit 'Salvar', :class => 'btn btn-success' %>
+  </div>
+  </div>
+<% end %>
+

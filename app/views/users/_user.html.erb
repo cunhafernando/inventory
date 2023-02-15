@@ -1,0 +1,35 @@
+<div id="<%= dom_id user %>">
+  <form>
+    <fieldset disabled>
+      <div class="row" >
+        <div class="col-3 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Usuário:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.user_name %>">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Nome:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.first_name %> <%= user.last_name %>">
+        </div>
+        <div class="col-3 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Matrícula:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.enrollment %>">
+        </div>
+      </div>
+
+      <div class="row" >
+        <div class="col-3 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Departamento:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.department %>">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Cargo:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.office %>">
+        </div>
+        <div class="col-3 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Moderação:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= user.role %>">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
