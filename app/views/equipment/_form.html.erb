@@ -1,15 +1,16 @@
 <%= form_with(model: equipment) do |form| %>
-  <% if equipment.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
-
-      <ul>
-        <% equipment.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
+      <% if equipment.errors.any? %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <h2>Encontramos<%= pluralize(equipment.errors.count, "erros") %> ao salvar o formulário.</h2>
+            <ul>
+            <% equipment.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
   <div class="row g-3 mb-2" >
     <div class="col-md-4">
       <strong><%= form.label "Tipo:", class: "form-label" %></strong>
@@ -54,7 +55,7 @@
     
     <div class="col-md-4">
       <strong><%= form.label "Fornecedor:", class: "form-label" %></strong>
-      <%= form.collection_select :supplier_id, Supplier.all, :id, :name, {prompt: "Selecione um formecedor"}, {class: "form-select"} %>
+      <%= form.collection_select :supplier_id, Supplier.all, :id, :name, {prompt: "Selecione um fornecedor"}, {class: "form-select"} %>
     </div>
 
     <div>

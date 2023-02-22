@@ -22,6 +22,7 @@ class EquipmentController < ApplicationController
   # POST /equipment or /equipment.json
   def create
     @equipment = Equipment.new(equipment_params)
+    @equipment.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @equipment.save
@@ -65,6 +66,6 @@ class EquipmentController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def equipment_params
-      params.require(:equipment).permit(:kind_of_equipment, :gati, :brand, :model, :serial_number, :patrimony, :allocate, :maintenance, :supplier_id)
+      params.require(:equipment).permit(:kind_of_equipment, :gati, :brand, :model, :serial_number, :patrimony, :allocate, :maintenance, :supplier_id, :user_id)
     end
 end

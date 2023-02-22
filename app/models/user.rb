@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     validates :user_name , presence: true, uniqueness: true
+    has_many :equipment
 
     enum role: [:user, :moderator, :admin]
     after_initialize :set_default_role, :if => :new_record?
