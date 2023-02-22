@@ -1,0 +1,53 @@
+<div id="<%= dom_id equipment %>">
+  <form>
+    <fieldset disabled>
+      <div class="row" >
+        <div class="col-3 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Tipo:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= equipment.kind_of_equipment %>">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>GATI:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= equipment.gati %>">
+        </div>
+        <div class="col-3 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Marca:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= equipment.brand %>">
+        </div>
+      </div>
+
+      <div class="row" >
+        <div class="col-3 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Modelo:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= equipment.model %>">
+        </div>
+        <div class="col-3 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Nº de série:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= equipment.serial_number %>">
+        </div>
+        <div class="col-2 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Patrimônio:</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= equipment.patrimony %>">
+        </div>
+        <div class="col-2 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Alocado?</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= equipment.allocate %>">
+        </div>
+        <div class="col-2 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Em manutenção?</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= equipment.maintenance %>">
+        </div>
+        <div class="col-2 mb-3">
+          <div class="form-check form-switch">
+            <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" disabled>
+          </div>
+        </div>
+        <div class="col-2 mb-3">
+          <label for="disabledTextInput" class="form-label"><strong>Fornecedor</strong></label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= equipment.supplier.name %>">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

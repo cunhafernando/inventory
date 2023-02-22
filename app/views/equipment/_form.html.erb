@@ -1,0 +1,65 @@
+<%= form_with(model: equipment) do |form| %>
+  <% if equipment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
+
+      <ul>
+        <% equipment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row g-3 mb-2" >
+    <div class="col-md-4">
+      <strong><%= form.label "Tipo:", class: "form-label" %></strong>
+      <%= form.select :kind_of_equipment, options_for_select([  ["Selecione um", ""],  "Computador", "Monitor", "Nobreak", "Impressora"]), 
+    {}, { class: "form-select" } %>
+    </div>
+
+    <div class="col-md-4">
+      <strong><%= form.label "GATI:", class: "form-label" %></strong>
+      <%= form.text_field :gati, class: "form-control" %>
+    </div>
+
+    <div class="col-md-4">
+      <strong><%= form.label "Marca:", class: "form-label" %></strong>
+      <%= form.text_field :brand, class: "form-control" %>
+    </div>
+
+    <div class="col-md-4">
+      <strong><%= form.label "Modelo:", class: "form-label" %></strong>
+      <%= form.text_field :model, class: "form-control" %>
+    </div>
+
+    <div class="col-md-4">
+      <strong><%= form.label "Nº de série:", class: "form-label" %></strong>
+      <%= form.text_field :serial_number, class: "form-control" %>
+    </div>
+
+    <div class="col-md-4">
+      <strong><%= form.label "Patrimônio:", class: "form-label" %></strong>
+      <%= form.text_field :patrimony, class: "form-control" %>
+    </div>
+
+    <div class="form-check form-switch">
+      <strong><%= form.label "Alocado", class: "form-check-label" %></strong>
+      <%= form.check_box :allocate, { class: "form-check-input"} %>
+    </div>
+
+    <div class="form-check form-switch">
+      <strong><%= form.label "Em manutenção", class: "form-check-label" %></strong>
+      <%= form.check_box :maintenance, { class: "form-check-input"} %>
+    </div>
+    
+    <div class="col-md-4">
+      <strong><%= form.label "Fornecedor:", class: "form-label" %></strong>
+      <%= form.collection_select :supplier_id, Supplier.all, :id, :name, {prompt: "Selecione um formecedor"}, {class: "form-select"} %>
+    </div>
+
+    <div>
+      <%= form.submit 'Salvar', :class => 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>
+

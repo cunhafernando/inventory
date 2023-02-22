@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-9">
+      <h3 class="mt-3">Equipamento</h3>
+    </div>
+    <div class="col-3 text-end">
+      <%= link_to "", new_equipment_path, class: 'mt-3 btn btn-outline-primary bi bi-plus' %>
+    </div>
+    <%= render @equipment %>
+    <div>
+      <%= link_to "Atualizar", edit_equipment_path(@equipment), class: "btn btn-primary" %>
+      <%= link_to "Equipamentos", equipment_index_path, class: "btn btn-primary" %>
+      <%= button_to "Apagar", @equipment, method: :delete, class: "mt-2 btn btn-danger" %>
+    </div>
+  </div>
+</div>

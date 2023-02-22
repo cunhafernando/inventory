@@ -1,15 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  type: 
   gati: MyString
   brand: MyString
   model: MyString
   serial_number: MyString
   patrimony: MyString
+  allocated: false
+  maintenance: false
 
 two:
+  type: 
   gati: MyString
   brand: MyString
   model: MyString
   serial_number: MyString
   patrimony: MyString
+  allocated: false
+  maintenance: false

@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_14_140555) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_16_130359) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "equipment", force: :cascade do |t|
+    t.string "kind_of_equipment"
+    t.string "gati"
+    t.string "brand"
+    t.string "model"
+    t.string "serial_number"
+    t.string "patrimony"
+    t.bigint "supplier_id"
+    t.boolean "allocate", default: false
+    t.boolean "maintenance", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["supplier_id"], name: "index_equipment_on_supplier_id"
+  end
+
+  create_table "suppliers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "user_name"
