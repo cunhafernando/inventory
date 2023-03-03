@@ -47,6 +47,11 @@
       <%= form.text_field :patrimony, class: "form-control" %>
     </div>
 
+    <div class="col-md-4">
+      <strong><%= form.label "Mac Adress:", class: "form-label" %></strong>
+      <%= form.text_field :macadress, class: "form-control" %>
+    </div>
+
     <div class="form-check form-switch">
       <strong><%= form.label "Alocado", class: "form-check-label" %></strong>
       <%= form.check_box :allocate, { class: "form-check-input"} %>

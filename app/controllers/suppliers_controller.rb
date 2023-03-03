@@ -22,6 +22,7 @@ class SuppliersController < ApplicationController
   # POST /suppliers or /suppliers.json
   def create
     @supplier = Supplier.new(supplier_params)
+    @supplier.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @supplier.save
@@ -65,6 +66,6 @@ class SuppliersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def supplier_params
-      params.require(:supplier).permit(:name)
+      params.require(:supplier).permit(:name, :user_id)
     end
 end

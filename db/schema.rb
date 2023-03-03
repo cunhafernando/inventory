@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_22_142837) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_03_175730) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,14 +27,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_142837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.string "macadress"
     t.index ["supplier_id"], name: "index_equipment_on_supplier_id"
     t.index ["user_id"], name: "index_equipment_on_user_id"
+  end
+
+  create_table "sectors", force: :cascade do |t|
+    t.string "local"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_sectors_on_user_id"
   end
 
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_suppliers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_142837) do
   end
 
   add_foreign_key "equipment", "users"
+  add_foreign_key "sectors", "users"
+  add_foreign_key "suppliers", "users"
 end

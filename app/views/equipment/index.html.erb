@@ -18,6 +18,7 @@
             <th scope="col">Modelo</th>
             <th scope="col">Nº de série</th>
             <th scope="col">Patrimônio</th>
+            <th scope="col">Mac Adress</th>
             <th scope="col"></th>
             <th scope="col"></th>
             <th scope="col"></th>
@@ -32,6 +33,7 @@
               <td><%= equipment.model %></td>
               <td><%= equipment.serial_number %></td>
               <td><%= equipment.patrimony %></td>
+              <td><%= equipment.macadress %></td>
               <td><%= link_to '', equipment, class: "btn btn-primary bi bi-eye" %></td>
               <td><%= link_to '', edit_equipment_path(equipment), class: "btn btn-primary bi bi-pencil-square" %></td>
               <td><%= link_to '', equipment, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-danger bi bi-trash" %></td>
