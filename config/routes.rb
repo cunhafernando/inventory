@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :allocations
   resources :sectors
   resources :suppliers
   get 'suppliers/new'

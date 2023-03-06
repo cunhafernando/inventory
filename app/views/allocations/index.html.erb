@@ -1,0 +1,38 @@
+
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-9">
+      <h3 class="mt-3">Alocação</h3>
+    </div>
+    <div class="col-3 text-end">
+      <%= link_to "", new_allocation_path, class: 'mt-3 btn btn-outline-primary bi bi-plus' %>
+    </div>
+    <h1></h1>
+
+    <div id="users">
+      <table id="table" data-height="500" data-toggle="table" data-search="true" data-height="500" data-pagination="true" data-search-accent-neutralise="true" class="table table-bordered table-striped" >
+        <thead>
+          <tr>
+            <th scope="col">Unidade</th>
+            <th scope="col">Setor</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @allocations.each do |allocation| %>
+            <tr>
+              <td><%= allocation.unit %></td>
+              <td><%= allocation.office %></td>
+              <td><%= link_to '', allocation, class: "btn btn-primary bi bi-eye" %></td>
+              <td><%= link_to '', edit_allocation_path(allocation), class: "btn btn-primary bi bi-pencil-square" %></td>
+              <td><%= link_to '', allocation, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-danger bi bi-trash" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

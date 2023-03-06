@@ -15,3 +15,8 @@ import "bootstrap-table/dist/bootstrap-table"
 import "bootstrap-table/dist/locale/bootstrap-table-pt-BR"
 import "bootstrap-table/dist/extensions/export/bootstrap-table-export"
 import "datatables.net/js/jquery.dataTables"
+
+let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))  
+let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {  
+  return new bootstrap.Popover(popoverTriggerEl)  
+})  

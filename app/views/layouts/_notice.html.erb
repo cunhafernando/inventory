@@ -11,6 +11,12 @@
                 <%= alert %>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+            <% if confirm.present? %>
+            <div class="col alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                <%= confirm %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% end %>
         <% end %>
     </div>
 </div>

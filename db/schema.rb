@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_03_175730) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_143530) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "allocations", force: :cascade do |t|
+    t.integer "unit"
+    t.string "office"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_allocations_on_user_id"
+  end
 
   create_table "equipment", force: :cascade do |t|
     t.string "kind_of_equipment"
@@ -61,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_175730) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "allocations", "users"
   add_foreign_key "equipment", "users"
   add_foreign_key "sectors", "users"
   add_foreign_key "suppliers", "users"
